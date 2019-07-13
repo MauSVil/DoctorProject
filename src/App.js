@@ -1,5 +1,6 @@
 import React from 'react';
-import Location from './views/Location'
+import { Router, Link } from "@reach/router"
+import {Location, Home} from './views'
 import { push as Menu } from 'react-burger-menu'
 
 const burguerMenuStyles={
@@ -37,10 +38,14 @@ const burguerMenuStyles={
   },
   bmItemList: {
     color: '#b8b7ad',
-    padding: '0.8em'
+    padding: '0.8em',
+    display: 'flex',
+    flexDirection: 'column'
   },
   bmItem: {
-    display: 'inline-block'
+    display: 'inline-block',
+    textAlign: 'center',
+    color: 'white'
   },
   bmOverlay: {
     background: 'rgba(0, 0, 0, 0.3)'
@@ -56,12 +61,15 @@ function App() {
           outerContainerId={'outer-container'}
           styles={ burguerMenuStyles }
         >
-            <a id="home" className="menu-item" href="/">Home</a>
-            <a id="about" className="menu-item" href="/about">About</a>
-            <a id="contact" className="menu-item" href="/contact">Contact</a>
+            <Link to="/" className="menu-item">Home</Link>
+            <Link to="/location" className="menu-item">Location</Link>
+            <Link to="/register" className="menu-item">Register</Link>
         </Menu>
         <main id="page-wrap">
-            <Location/>
+          <Router>
+            <Home path="/"/>
+            <Location path="/location"/>
+          </Router>
         </main>
       </div>
   );
