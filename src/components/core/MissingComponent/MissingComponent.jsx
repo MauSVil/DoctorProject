@@ -17,10 +17,10 @@ const styles = {
 
 class MissingComponent extends Component {
     render() { 
-        const { classes } = this.props;
+        const { classes, missingString } = this.props;
         return ( 
             <div className={classes.missingComponentContainer}>
-                <h3>Missing Component</h3>
+                <h3>{missingString}</h3>
             </div>
          );
     }

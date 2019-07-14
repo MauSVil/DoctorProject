@@ -9,7 +9,7 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 const images= [1,2,3,4,5];
 const styles={
     imageContainer: {
-        height: 700,
+        height: '100vh',
     },
     carrouselContainer:{
         position: 'relative'
@@ -39,7 +39,7 @@ const Carrousel = (props) => {
                 {images && images.map(image=>{
                     return(
                         <div className={classes.imageContainer}>
-                            <MissingComponent/>
+                            <MissingComponent missingString={'Missing Image'}/>
                         </div>
                     )
                 })}
