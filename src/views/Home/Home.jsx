@@ -1,10 +1,21 @@
 import React, { Component } from 'react';
+import { withStyles } from '@material-ui/styles';
+import Carrousel from '../../components/Carrousel/Carrousel';
+
+const styles={
+    
+}
 
 class Home extends Component {
     state = {  }
-    render() { 
-        return ( <h1>Home</h1> );
+    render() {
+        const {classes}= this.props
+        return (
+            <div>
+                <Carrousel/>
+            </div>
+         );
     }
 }
  
-export default Home;
+export default withStyles(styles)(Home);
