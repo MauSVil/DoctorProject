@@ -13,7 +13,19 @@ class Home extends Component {
         return (
             <div>
                 <Carrousel/>
-                <BoxInfo title={'Quienes somos?'} titlePosition={'right'}>
+                <BoxInfo title={'Quienes somos?'} titlePosition={'center'}>
+                    <p>
+                        Lorem ipsum dolor sit amet 
+                        consectetur adipisicing elit.
+                        Voluptatum sequi corrupti eos
+                        laudantium expedita, natus quia.
+                        Quisquam voluptatem commodi veniam
+                        provident officia, aliquid
+                        doloribus voluptas, impedit ut 
+                        voluptates incidunt odit?
+                    </p>
+                </BoxInfo>
+                <BoxInfo title={'Quienes somos?'} titlePosition={'center'} inverted>
                     <p>
                         Lorem ipsum dolor sit amet 
                         consectetur adipisicing elit.

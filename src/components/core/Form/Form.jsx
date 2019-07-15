@@ -3,6 +3,7 @@ import { withStyles } from '@material-ui/styles';
 import FormControl from '@material-ui/core/FormControl';
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button';
+import {Link} from '@reach/router'
 
 const styles={
     form:{
@@ -13,6 +14,9 @@ const styles={
     },
     textField: {
         width: 300,
+    },
+    formButton:{
+        width: '100%',
     }
 }
 
@@ -43,9 +47,9 @@ function Form(props) {
                 // onChange={handleChange('name')}
                 margin="normal"
             />
-            <Button variant="contained">
-                Enviar
-            </Button>
+            <Link to="/doctors">
+                <Button variant="contained" className={classes.formButton}>Enviar</Button>
+            </Link>
         </form>
     );
   }

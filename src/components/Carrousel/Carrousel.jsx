@@ -2,14 +2,31 @@ import React from 'react';
 import { withStyles } from '@material-ui/styles';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
-import MissingComponent from '../core/MissingComponent/MissingComponent';
 import Form from '../core/Form/Form';
+import Heroe1 from '../../assets/Heroe1.jpg'
+import Heroe2 from '../../assets/Heroe2.jpg'
+import Heroe3 from '../../assets/Heroe3.jpg'
+import Heroe4 from '../../assets/Heroe4.jpg'
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
-const images= [1,2,3,4,5];
+const images= ['Heroe1','Heroe2','Heroe3','Heroe4'];
 const styles={
     imageContainer: {
         height: '100vh',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat'
+    },
+    Heroe1: {
+        backgroundImage: `url(${Heroe1})`
+    },
+    Heroe2: {
+        backgroundImage: `url(${Heroe2})`
+    },
+    Heroe3: {
+        backgroundImage: `url(${Heroe3})`
+    },
+    Heroe4: {
+        backgroundImage: `url(${Heroe4})`
     },
     carrouselContainer:{
         position: 'relative'
@@ -36,11 +53,9 @@ const Carrousel = (props) => {
                 <Form/>
             </div>
             <AutoPlaySwipeableViews interval={5000}>
-                {images && images.map(image=>{
+                {images && images.map((image, index)=>{
                     return(
-                        <div className={classes.imageContainer}>
-                            <MissingComponent missingString={'Missing Image'}/>
-                        </div>
+                        <div key={index} className={`${classes.imageContainer} ${classes[image]}`} />
                     )
                 })}
             </AutoPlaySwipeableViews>

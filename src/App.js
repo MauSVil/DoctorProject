@@ -40,7 +40,8 @@ const burguerMenuStyles={
     color: '#b8b7ad',
     padding: '0.8em',
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    height: 'unset'
   },
   bmItem: {
     display: 'inline-block',

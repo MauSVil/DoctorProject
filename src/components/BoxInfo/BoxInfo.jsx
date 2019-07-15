@@ -9,39 +9,36 @@ const styles={
         textAlign: 'center',
     },
     infoTitle: {
+        gridColumnStart: 1,
+        gridColumnEnd: 3,
+        textAlign: 'center',
         display: 'flex',
-        color: 'black',
-    },
-    center: {
         justifyContent: 'center',
-        alignItems: 'center',
-    },
-    left: {
-        justifyContent: 'start',
-        alignItems: 'center',
-    },
-    right: {
-        justifyContent: 'flex-end',
         alignItems: 'center',
     },
     info: {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        padding: '30px',
+        padding: '30px 150px',
         lineHeight: '25px'
     }
 }
 
 const BoxInfo = (props) => {
-    const {title, children, titlePosition, classes} = props;
+    const {title, children, classes, inverted} = props;
     return (
-        <div className={classes.boxInfoContainer}>
-            <div className={`${classes.infoTitle} ${classes[titlePosition]}`}>
-                {title}
+        <div className={`${classes.boxInfoContainer} ${inverted && classes.boxInverted}`}>
+            <div className={classes.infoTitle}>
+                <h2>
+                    {title}
+                </h2>
             </div>
             <div className={classes.info}>
-                {children}
+                {inverted ? children: title}
+            </div>
+            <div className={classes.info}>
+            {inverted ? title: children}
             </div>
         </div>
     );
